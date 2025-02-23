@@ -53,7 +53,7 @@ def handle_start(message):
                 f"📅 Kadaluwarsa: {expiration_date.strftime('%d/%m/%Y %H:%M:%S')}"
             )
     else:
-        vip_status = "❌ *No tienes un plan vip activo.*"
+        vip_status = "❌ *Kamu Belum Ada DataBase Dari SANZ.*"
     markup = InlineKeyboardMarkup()
     button = InlineKeyboardButton(
         text="💻 SANZ - OFICIAL 💻",
