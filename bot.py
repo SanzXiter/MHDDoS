@@ -65,7 +65,7 @@ def handle_start(message):
     bot.reply_to(
         message,
         (
-            "🤖 *SELAMAT DATANG DI DDOS BOT [Free Fire]!*"
+            "🤖 *SELAMAT DATANG DI BOT DDOS [FREE FIRE!]*"
             
 
             f"""
@@ -74,11 +74,11 @@ def handle_start(message):
             "📌 *Cara penggunaan:*"
             """
 ```
-/crash <TYPE> <IP/HOST:PORT> <THREADS> <MS>```\n"""
+/ddos <TYPE> <IP/HOST:PORT> <THREADS> <MS>```\n"""
             "💡 *Contoh:*"
             """
 ```
-/crash UDP 143.92.125.230:10013 10 900```\n"""
+/ddos UDP 143.92.125.230:10013 10 900```\n"""
             "👑 LUFZY 🇲🇨 PENGGUNA VIP 👑"
         ),
         reply_markup=markup,
@@ -96,7 +96,7 @@ def handle_addvip(message):
     if len(args) != 3:
         bot.reply_to(
             message,
-            "❌ Format tidak valid. Use: `/vip <ID> <QUANTOS DIAS>`",
+            "❌ Format tidak valid. Use: `/vip <ID> <BERAPA HARI>`",
             parse_mode="Markdown",
         )
         return
@@ -149,9 +149,9 @@ def handle_ping(message):
             (
                 "❌ *Format tidak valid!*\n\n"
                 "📌 * Cara Penggunaan yang benar:*\n"
-                "`/crash <TYPE> <IP/HOST:PORT> <THREADS> <MS>`\n\n"
+                "`/ddos <TYPE> <IP/HOST:PORT> <THREADS> <MS>`\n\n"
                 "💡 *Contoh:*\n"
-                "`/crash UDP 143.92.125.230:10013 10 900`"
+                "`/ddos UDP 143.92.125.230:10013 10 900`"
             ),
             parse_mode="Markdown",
         )
