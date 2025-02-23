@@ -56,7 +56,7 @@ def handle_start(message):
         vip_status = "❌ *Kamu Belum Ada DataBase Dari SANZ.*"
     markup = InlineKeyboardMarkup()
     button = InlineKeyboardButton(
-        text="💻 SANZ - OFICIAL 💻",
+        text="💻 OWNER - REAL 💻",
         url=f"tg://user?id={ADMIN_ID}"
 
     )
