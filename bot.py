@@ -44,7 +44,7 @@ def handle_start(message):
     if result:
         expiration_date = datetime.strptime(result[0], "%Y-%m-%d %H:%M:%S")
         if datetime.now() > expiration_date:
-            vip_status = "❌ *Seu plano VIP expirou.*"
+            vip_status = "❌ *Telah Kadaluwarsa.*"
         else:
             dias_restantes = (expiration_date - datetime.now()).days
             vip_status = (
@@ -89,14 +89,14 @@ def handle_start(message):
 @bot.message_handler(commands=["vip"])
 def handle_addvip(message):
     if message.from_user.id != ADMIN_ID:
-        bot.reply_to(message, "❌ No eres un vendededor autorizado.")
+        bot.reply_to(message, "❌ Anda Bukan Penjual Resmi.")
         return
 
     args = message.text.split()
     if len(args) != 3:
         bot.reply_to(
             message,
-            "❌ Formato inválido. Use: `/vip <ID> <QUANTOS DIAS>`",
+            "❌ Format Tidak Valid. Contoh: `/vip <ID> <QUANTOS DIAS>`",
             parse_mode="Markdown",
         )
         return
@@ -115,7 +115,7 @@ def handle_addvip(message):
         )
         conn.commit()
 
-    bot.reply_to(message, f"✅ Usuário {telegram_id} agregado como VIP por {days} dias.")
+    bot.reply_to(message, f"✅ Pengguna {telegram_id} Sudah Menjadi VIP Selama {days} Hari.")
 
 
 @bot.message_handler(commands=["crash"])
@@ -130,16 +130,16 @@ def handle_ping(message):
         result = cursor.fetchone()
 
     if not result:
-        bot.reply_to(message, "❌ No tienes permiso para usar este comando.")
+        bot.reply_to(message, "❌ Anda Tidak Memiliki Izin/Akses Dari @sanzstore22.")
         return
 
     expiration_date = datetime.strptime(result[0], "%Y-%m-%d %H:%M:%S")
     if datetime.now() > expiration_date:
-        bot.reply_to(message, "❌ Su acceso vip Expiró")
+        bot.reply_to(message, "❌ Akses Anda Telah Kadaluwarsa")
         return
 
     if telegram_id in cooldowns and time.time() - cooldowns[telegram_id] < 10:
-        bot.reply_to(message, "❌ Espera 10 segundos antes de iniciar otro ataque y recuerda parar el anterior.")
+        bot.reply_to(message, "❌ Tunggu 10 Detik Untuk Melakukan Serangan Karena Sebelumnya Telah Menggunakan Attack.")
         return
 
     args = message.text.split()
@@ -147,7 +147,7 @@ def handle_ping(message):
         bot.reply_to(
             message,
             (
-                "❌ *Vormat Tidak Valid!*\n\n"
+                "❌ *Format Tidak Valid!*\n\n"
                 "📌 *Cara Penggunaan Yang Benar:*\n"
                 "`/crash <TYPE> <IP/HOST:PORT> <THREADS> <MS>`\n\n"
                 "💡 *Contoh:*\n"
@@ -191,7 +191,7 @@ def handle_stop_attack(call):
 
     if call.from_user.id != telegram_id:
         bot.answer_callback_query(
-            call.id, "❌ Solo el usuario que inicio el ataque puede pararlo"
+            call.id, "❌ Hanya pengguna yang memulai serangan yang dapat menghentikannya"
         )
         return
 
@@ -200,7 +200,7 @@ def handle_stop_attack(call):
         process.terminate()
         del active_attacks[telegram_id]
 
-        bot.answer_callback_query(call.id, "✅ Ataque parado con éxito.")
+        bot.answer_callback_query(call.id, "✅ Berhasil DiHentikan.")
         bot.edit_message_text(
             "*[⛔] DDOS SELESAI[⛔]*",
             chat_id=call.message.chat.id,
@@ -210,7 +210,7 @@ def handle_stop_attack(call):
         time.sleep(3)
         bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.id)
     else:
-        bot.answer_callback_query(call.id, "❌ No se encontro ningun ataque, siga con su acción.")
+        bot.answer_callback_query(call.id, "❌ Tidak ada Ada serangan Dapat Ditemukan, Silahkan Lanjutkan Tindakan Anda.")
 
 if __name__ == "__main__":
     bot.infinity_polling()
