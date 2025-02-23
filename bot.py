@@ -48,9 +48,9 @@ def handle_start(message):
         else:
             dias_restantes = (expiration_date - datetime.now()).days
             vip_status = (
-                f"✅ CLIENTE VIP!\n"
-                f"⏳ Dias restantes: {dias_restantes} dia(s)\n"
-                f"📅 Expira en: {expiration_date.strftime('%d/%m/%Y %H:%M:%S')}"
+                f"✅ PENGGUNA VIP!\n"
+                f"⏳ Hari Tersisa: {dias_restantes} dia(s)\n"
+                f"📅 Kadaluwarsa: {expiration_date.strftime('%d/%m/%Y %H:%M:%S')}"
             )
     else:
         vip_status = "❌ *No tienes un plan vip activo.*"
@@ -65,17 +65,17 @@ def handle_start(message):
     bot.reply_to(
         message,
         (
-            "🤖 *BIENVENIDO AL CRASH BOT [Free Fire]!*"
+            "🤖 *SELAMAT DATANG DI BOT DDOS BY SANZ [FREE FIRE]!*"
             
 
             f"""
 ```
 {vip_status}```\n"""
-            "📌 *Como usar:*"
+            "📌 *Cara Penggunaan:*"
             """
 ```
 /crash <TYPE> <IP/HOST:PORT> <THREADS> <MS>```\n"""
-            "💡 *Ejemplo:*"
+            "💡 *Contoh:*"
             """
 ```
 /crash UDP 143.92.125.230:10013 10 900```\n"""
@@ -147,10 +147,10 @@ def handle_ping(message):
         bot.reply_to(
             message,
             (
-                "❌ *Formato inválido!*\n\n"
-                "📌 *Uso correto:*\n"
+                "❌ *Vormat Tidak Valid!*\n\n"
+                "📌 *Cara Penggunaan Yang Benar:*\n"
                 "`/crash <TYPE> <IP/HOST:PORT> <THREADS> <MS>`\n\n"
-                "💡 *Ejemplo:*\n"
+                "💡 *Contoh:*\n"
                 "`/crash UDP 143.92.125.230:10013 10 900`"
             ),
             parse_mode="Markdown",
@@ -173,11 +173,11 @@ def handle_ping(message):
     bot.reply_to(
         message,
         (
-            "*[✅] ATAQUE INICIADO - 200 [✅]*\n\n"
+            "*[✅] DDOS DIMULAI- 200 [✅]*\n\n"
             f"🌐 *Puerto:* {ip_port}\n"
             f"⚙️ *Tipo:* {attack_type}\n"
             f"🧟‍♀️ *Threads:* {threads}\n"
-            f"⏳ *Tiempo (ms):* {duration}\n\n"
+            f"⏳ *Time (ms):* {duration}\n\n"
             f"💠 SanzOfficial 🇵🇪 USERS VIP 💠"
         ),
         reply_markup=markup,
