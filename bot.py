@@ -168,7 +168,7 @@ def handle_ping(message):
     cooldowns[telegram_id] = time.time()
 
     markup = InlineKeyboardMarkup()
-    markup.add(InlineKeyboardButton("⛔ Detener Ataque", callback_data=f"stop_{telegram_id}"))
+    markup.add(InlineKeyboardButton("⛔ Hentikan Ddos", callback_data=f"stop_{telegram_id}"))
 
     bot.reply_to(
         message,
