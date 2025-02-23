@@ -6,8 +6,8 @@ from threading import Lock
 import time
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-BOT_TOKEN = "TOKEN AQUI"
-ADMIN_ID = 7178876305
+BOT_TOKEN = "7112251571:AAFjHe8gSPkUKH0Qd32HlyFblCFqnSLvQOo"
+ADMIN_ID = 7464869171
 START_PY_PATH = "/workspaces/MHDDoS/start.py"
 
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -56,7 +56,7 @@ def handle_start(message):
         vip_status = "❌ *No tienes un plan vip activo.*"
     markup = InlineKeyboardMarkup()
     button = InlineKeyboardButton(
-        text="💻 VENDEDOR - OFICIAL 💻",
+        text="💻 SANZ - OFICIAL 💻",
         url=f"tg://user?id={ADMIN_ID}"
 
     )
@@ -79,7 +79,7 @@ def handle_start(message):
             """
 ```
 /crash UDP 143.92.125.230:10013 10 900```\n"""
-            "💠 KrizzZModz 🇵🇪 USERS VIP 💠"
+            "💠 SANZOFFICIAL 🇵🇪 USERS VIP 💠"
         ),
         reply_markup=markup,
         parse_mode="Markdown",
@@ -168,7 +168,7 @@ def handle_ping(message):
     cooldowns[telegram_id] = time.time()
 
     markup = InlineKeyboardMarkup()
-    markup.add(InlineKeyboardButton("⛔ Detener Ataque", callback_data=f"stop_{telegram_id}"))
+    markup.add(InlineKeyboardButton("⛔ Hentikan Serangan", callback_data=f"stop_{telegram_id}"))
 
     bot.reply_to(
         message,
@@ -178,7 +178,7 @@ def handle_ping(message):
             f"⚙️ *Tipo:* {attack_type}\n"
             f"🧟‍♀️ *Threads:* {threads}\n"
             f"⏳ *Tiempo (ms):* {duration}\n\n"
-            f"💠 KrizzZModz 🇵🇪 USERS VIP 💠"
+            f"💠 SANZOFFICIAL 🇵🇪 USERS VIP 💠"
         ),
         reply_markup=markup,
         parse_mode="Markdown",
