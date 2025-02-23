@@ -115,7 +115,7 @@ def handle_addvip(message):
         )
         conn.commit()
 
-    bot.reply_to(message, f"✅ Pengguna {telegram_id} ditambahkan sebagai VIP oleh {days} hari.")
+    bot.reply_to(message, f"✅ Pengguna {telegram_id} ditambahkan sebagai VIP oleh @blackkrizz {days} hari.")
 
 
 @bot.message_handler(commands=["ddos"])
