@@ -118,7 +118,7 @@ def handle_addvip(message):
     bot.reply_to(message, f"✅ Pengguna {telegram_id} ditambahkan sebagai VIP oleh {days} hari.")
 
 
-@bot.message_handler(commands=["crash"])
+@bot.message_handler(commands=["ddos"])
 def handle_ping(message):
     telegram_id = message.from_user.id
 
